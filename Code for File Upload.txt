@@ -1,0 +1,19 @@
+Code for File Upload:
+package handlingpop_ups;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class UploadtheFile {
+public static void main(String[] args) throws InterruptedException
+{
+System.setProperty("webdriver.chrome.driver","./software/chromedriver.exe")
+;
+WebDriver driver=new ChromeDriver();
+driver.get("https://demoqa.com/upload-download");
+Thread.sleep(2000);
+WebElement upload = driver.findElement(By.id("uploadfile"));
+Thread.sleep(2000);
+upload.sendKeys("C:\\Users\\Dell\\Desktop\\Fresher_Resume.doc");
+}
+}

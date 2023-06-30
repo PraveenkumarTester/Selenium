@@ -1,0 +1,30 @@
+Select multiple options from the dropdown:
+package handlingdropdown;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+public class FetchallOptionfromDropdown {
+public static void main (String[] args) throws InterruptedException
+{
+System.setProperty("webdriver.gecko.driver", 
+"./software/geckodriver.exe");
+WebDriver driver=new FirefoxDriver();
+driver.get("file:///C:/Users/Dell/Documents/SELENIUM%20HTML%20DUMMY%20WEBPA
+GE/Sourcecode%20for%20Multiple%20Select%20Dropdown.html");
+Thread.Sleep(2000);
+WebElement drop = driver.findElement(By.xpath("//select[@id='random 
+name']"));
+Select sel = new Select(drop);
+List<WebElement> options = sel.getOptions();
+int count = options.size();
+System.out.println(count);
+for(WebElement option:options)
+{
+String text = option.getText();
+System.out.println(text);
+}
+}
+}
